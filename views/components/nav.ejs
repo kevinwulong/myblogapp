@@ -1,0 +1,10 @@
+
+<nav class="navbar navbar-default navbar-fixed-top nav_bar" role="navigation">
+  <div class=" main_bar">
+    <% if (user){ %>
+            <a class="navbar-brand" href="/posts?author=<%= user._id %>"><%=user.name%></a>
+      <% }else{%>
+            <a class="navbar-brand" href="/">Blog</a>
+            <% } %>
+  </div>
+</nav>

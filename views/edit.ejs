@@ -1,0 +1,37 @@
+<%- include('header') %>
+
+  <div class="create_boxone">
+       <a class="avatar"
+       href="/posts?author=<%= user._id %>"
+       data-title="<%= user.name %> | <%= ({m: '男', f: '女', x: '保密'})[user.gender] %>"
+       data-content="<%= user.bio %>" >
+      <img class="avatar" src="/img/<%= user.avatar %>" id="create_img">
+    </a>
+</div>
+
+<div class="panel panel-default" id="create_main">
+  <div class="panel-heading">
+    <h3 class="panel-title">创建文章</h3>
+  </div>
+  <div class="panel-body">
+
+   <form method="post" action="/posts/<%= post._id %>/edit">
+      <div class="field required">
+        <label>标题</label>
+        <input type="text" class="form-control" name="title" value="<%=post.title %>">
+      </div>
+      <br/>
+      <div class="field required">
+        <label>内容</label>
+        <textarea class="form-control" rows="8" name="content">
+          <%=post.content %>
+        </textarea>
+      </div>
+      <br/>
+      <button type="submit" class="btn btn-success" >发布</button>
+    </div>
+  </form>
+  </div>
+</div>
+
+<%- include('footer') %>

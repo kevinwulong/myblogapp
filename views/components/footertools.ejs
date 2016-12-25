@@ -1,0 +1,51 @@
+
+<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+    <div class='row main_bottom'>
+          <% if(user) {%> 
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                      <a href="/">
+                       <span class="glyphicon glyphicon-home"></span> 
+                       <p>首页</p>
+                       </a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                       <a href="/posts/create">
+                       <span class="glyphicon glyphicon-plus"></span> 
+                       <p>发布</p>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                       <a href="/signout">
+                       <span class="glyphicon glyphicon-off"></span>
+                       <p>登出</p>
+                        </a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                       <a href="/posts?author=<%= user._id %>">
+                       <span class="glyphicon glyphicon glyphicon-user"></span>
+                       <p>是我</p>
+                        </a>
+                    </div>
+              <% } else {%>
+                      <div class="col-xs-4 col-sm-4 col-md-4">
+                      <a href="/">
+                       <span class="glyphicon glyphicon-home"></span> 
+                       <p>首页</p>
+                       </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                      <a href="/signup">
+                       <span class="glyphicon glyphicon-tree-conifer"></span> 
+                       <p>注册</p>
+                       </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-4">
+                      <a href="/signin">
+                       <span class="glyphicon glyphicon-tree-deciduous"></span> 
+                       <p>登录</p>
+                       </a>
+                    </div>
+
+    <% } %>
+    </div><!-- main_bottom -->
+</nav>

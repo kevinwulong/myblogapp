@@ -1,0 +1,26 @@
+<%- include('header') %>
+
+<div class="panel panel-default create_main">
+  <div class="panel-heading">
+    <h3 class="panel-title">创建文章</h3>
+  </div>
+  <div class="panel-body">
+
+   <form method="post" action="/posts">
+      <div class="field required">
+        <label>标题</label>
+        <input type="text" class="form-control"  placeholder="我是标题" name="title">
+      </div>
+      <br/>
+      <div class="field required">
+        <label>内容</label>
+        <textarea class="form-control" rows="8" name="content"></textarea>
+      </div>
+      <br/>
+      <button type="submit" class="btn btn-success" >发布</button>
+    </div>
+  </form>
+  </div>
+</div>
+
+<%- include('footer') %>

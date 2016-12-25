@@ -1,0 +1,36 @@
+<div class="container">
+      <div class="row">
+                  
+             <div class="col-xs-12 col-sm-12 col-md-12 dad_box">
+
+                  <div class="panel panel-default ">
+                    <div class="panel-heading">
+                      <div class = "avatar_box" >
+                            <a class="avatar" href="/posts?author=<%= post.author._id %>">
+                              <img class="avatar" src="/img/<%= post.author.avatar %>">
+                            </a>
+                     </div>
+                        <h3><a href="/posts/<%= post._id %>"><%= post.title %></a></h3>
+                    </div>
+                    <div class="panel-body">
+                      <p><%- post.content %></p>
+                        <div class="menu">
+                            <span class="tag_day"><%= post.created_at %></span>
+                            <span class="tag_do">
+                                <span>浏览(<%= post.pv %>)</span>
+                                <span><a href="/posts/<%= post._id %>">留言(<%= post.commentsCount %>)</a></span>
+                                <% if (user && post.author._id && user._id.toString() === post.author._id.toString()) { %>
+                                      <span><a href="/posts/<%= post._id %>/edit">编辑</a></span>
+                                      <span><a href="/posts/<%= post._id %>/remove">删除</a></span>
+                                <% } %>
+                            </span>
+                        </div>
+                    </div>
+                  </div>
+                   </div>
+          </div>
+</div>
+
+
+
+<%- include('components/nav') %>

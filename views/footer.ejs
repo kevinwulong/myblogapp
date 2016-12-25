@@ -1,0 +1,15 @@
+<%- include('components/footertools') %>
+<script>
+	$(".thumb").click(function(){
+
+		if($(this).children('img').attr("src") =="/img/usertools/thumbed.png"){
+			$(this).children('img').attr("src" ,"/img/usertools/thumb.png")
+		}
+		else{
+			$(this).children('img').attr("src" ,"/img/usertools/thumbed.png")
+		}
+	})
+
+</script>
+  </body>
+</html>
